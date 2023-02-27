@@ -11,6 +11,7 @@ Pytorch Implementation of paper:
  <div align="center">
  <p align="center">
   <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/FSTA-Net/main/img/BEMap.png" />
+   
   The overall architecture of FSTA-Net. FSTA-Net consists of three components: 2D CNN backbone (bottom right corner), BE Module (top half), and FSTA Module (bottom left corner). For brevity, in the BE module, the 3D kernel shape is in the order of output and input channel, temporal and spatial kernel size; in terms of "Stride" and "Padding", the relevant coefficients are also in the order of temporal and spatial dimension. As for the backbone, we adopt the standard ResNet18; the network configuration values {64, 128, 256, 512} denote the output channel number of each convolutional layer. In the forward propagation of the backbone, the ($T/2-1$)-frame BE-Map is regarded as the image batch of size ($T/2-1$). The "Subtraction" denotes pixel-wise inter-frame subtraction, the "Summation" denotes summation on the channel dimension for each frame, and "Addition" denotes pixel-wise addition.
   </p>
 </div>
@@ -18,6 +19,7 @@ Pytorch Implementation of paper:
  <div align="center">
  <p align="center">
   <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/FSTA-Net/main/img/FSTA.png" width="600" />
+   
   FSTA is mainly formed by four different convolutions (i.e., $\beta$, $\chi$, $\alpha$, and $\eta$), which are utilized to learn the bases and filter, channel compression, attention query, as well as channel adaptation and reconstruction. "Normalize" denotes vector normalization. "Corr" represents the correlation function. "Abs" represents the absolute value function. $\boldsymbol{E}$ is the identity matrix. The frequency domain filter learning is embedded in the process of frequency domain transform basis calculation and selection. We guarantee the variance of the transform bases by adding an additional loss function to penalize the bases that are too similar to others.
   </p>
 </div>
@@ -28,6 +30,7 @@ We conduct experiments in three dimensions, including pseudo-modality, attention
  <div align="center">
  <p align="center">
   <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/FSTA-Net/main/img/FSTA_SOTA.png" width="600" />
+   
   Dynamic hand gesture authentication performance comparison on the SCUT-DHGA dataset in terms of equal error rate (EER), computational cost (FLOPs/Video), and model size (#Params). Our proposed FSTA-Net achieves the best trade-off between accuracy and efficiency, compared with the excellent previous methods selected from the experiment part. These models cover 3D CNN, two-stream CNN, 2D CNN, temporal difference, and attention module based on our proposed BE-Map.
  </p>
 </div>
