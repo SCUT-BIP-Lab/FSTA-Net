@@ -17,7 +17,7 @@ Pytorch Implementation of paper:
 
  <div align="center">
  <p align="center">
-  <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/FSTA-Net/main/img/FSTA.png" />
+  <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/FSTA-Net/main/img/FSTA.png" width="200" />
   FSTA is mainly formed by four different convolutions (i.e., $\beta$, $\chi$, $\alpha$, and $\eta$), which are utilized to learn the bases and filter, channel compression, attention query, as well as channel adaptation and reconstruction. "Normalize" denotes vector normalization. "Corr" represents the correlation function. "Abs" represents the absolute value function. $\boldsymbol{E}$ is the identity matrix. The frequency domain filter learning is embedded in the process of frequency domain transform basis calculation and selection. We guarantee the variance of the transform bases by adding an additional loss function to penalize the bases that are too similar to others.
   </p>
 </div>
