@@ -25,7 +25,7 @@ def feedforward_demo(frame_length, feature_dim, out_dim):
     # cos_matrix = relu(cos_matrix.abs() - th)
     # dct_loss = cos_matrix.sum(dim=-1)
     # dct_loss = dct_loss.mean()
-    # loss = loss_backbone + 0.01 * dct_loss
+    # loss = loss_backbone + 0.05 * dct_loss
     return id_feature
 
 
